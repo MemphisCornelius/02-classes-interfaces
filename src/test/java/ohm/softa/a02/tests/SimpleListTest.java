@@ -65,4 +65,13 @@ public class SimpleListTest {
 			assertTrue(i % 2 == 0);
 		}
 	}
+
+	@Test
+	void testFilterSmaller3(){
+		SimpleListImpl result = (SimpleListImpl) testList.filter(o -> (int) o < 3);
+		for(Object o : result){
+			int i = (int)o;
+			assertTrue(i < 3);
+		}
+	}
 }
