@@ -49,7 +49,7 @@ public class SimpleListImpl implements SimpleList, Iterable {
 
     @Override
     public Iterator iterator() {
-        return new SimpleIteratorImpl(head);
+        return new SimpleIteratorImpl();
     }
 
 
@@ -61,11 +61,8 @@ public class SimpleListImpl implements SimpleList, Iterable {
 
     private class SimpleIteratorImpl implements Iterator{
 
-        Element current;
+        Element current = head;
 
-        SimpleIteratorImpl(Element head) {
-            current = head;
-        }
         @Override
         public boolean hasNext() {
             return current != null;

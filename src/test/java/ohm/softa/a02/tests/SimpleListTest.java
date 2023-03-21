@@ -74,4 +74,19 @@ public class SimpleListTest {
 			assertTrue(i < 3);
 		}
 	}
+
+	@Test
+	void testJedesDritte() {
+		SimpleListImpl result = (SimpleListImpl) testList.filter(new SimpleFilter() {
+
+			int counter = 0;
+			@Override
+			public boolean include(Object item) {
+				counter++;
+				return counter % 3 == 0;
+			}
+		});
+
+		assertEquals(testList.size() / 3, result.size());
+	}
 }
